@@ -16,6 +16,7 @@ vector < TransientVertex > rave::VertexReconstructor::vertices
   {
     return vector < TransientVertex > ();
   }
+   cout<< "rave::VertexReconstructor" << endl;
    edm::LogError("rave::VertexReconstructor" ) << "t.size=" << t.size();
    edm::LogError("rave::VertexReconstructor" ) << "t[0]=" << t[0].initialFreeState();
   #ifdef HAS_GSF
