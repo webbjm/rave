@@ -10,7 +10,7 @@ if HAS_FLAVORTAGGING
   SUBDIRS+=src/RecoBTag
 endif
 
-SUBDIRS+=src/RaveBase tests
+SUBDIRS+=src/RaveBase
 
 if JAVA_ENABLED
   SUBDIRS+= java

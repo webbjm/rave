@@ -16,13 +16,13 @@ vector < TransientVertex > rave::VertexReconstructor::vertices
   {
     return vector < TransientVertex > ();
   }
-  // edm::LogError("rave::VertexReconstructor" ) << "t.size=" << t.size();
-  // edm::LogError("rave::VertexReconstructor" ) << "t[0]=" << t[0].initialFreeState();
+   edm::LogError("rave::VertexReconstructor" ) << "t.size=" << t.size();
+   edm::LogError("rave::VertexReconstructor" ) << "t[0]=" << t[0].initialFreeState();
   #ifdef HAS_GSF
   const reco::GsfTransientTrack * gsft = dynamic_cast < const reco::GsfTransientTrack * > (t[0].basicTransientTrack() );
   if ( gsft )
   {
-    // edm::LogError("rave::VertexReconstructor" ) << "gsft=" << gsft->initialFreeState();
+     edm::LogError("rave::VertexReconstructor" ) << "gsft=" << gsft->initialFreeState();
     TrajectoryStateOnSurface tsos=gsft->stateOnSurface( GlobalPoint(0.,0.,0.) );
     vector < TrajectoryStateOnSurface > comps = tsos.components();
     /*
