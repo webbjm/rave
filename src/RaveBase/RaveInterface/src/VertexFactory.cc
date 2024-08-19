@@ -362,8 +362,8 @@ vector < Vertex > VertexFactory::fit ( const vector < Track > & prims,
         {
           tmp = r.vertices ( ttrks, fconverter.convert(seed) );
         } else {
-          cout<<"Make vertices"<<endl;
           tmp = r.vertices ( ttrks );
+          cout<<"spot in vertex factory loop with obect: "<<tmp<<endl;
         }
       }
     } catch ( cms::Exception & e ) {
