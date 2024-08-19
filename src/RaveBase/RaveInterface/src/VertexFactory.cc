@@ -363,7 +363,7 @@ vector < Vertex > VertexFactory::fit ( const vector < Track > & prims,
           tmp = r.vertices ( ttrks, fconverter.convert(seed) );
         } else {
           tmp = r.vertices ( ttrks );
-          cout<<"spot in vertex factory loop with obect: "<<tmp<<endl;
+          cout<<"spot in vertex factory loop with obect: "<<endl;
         }
       }
     } catch ( cms::Exception & e ) {
@@ -383,6 +383,7 @@ vector < Vertex > VertexFactory::fit ( const vector < Track > & prims,
           i!=tmp.end() ; ++i )
     {
       vector < Track > trks = secs;
+      cout<<"in tmp loop"<<endl;
       /*
       for ( vector< Track >::const_iterator j=secs.begin(); j!=secs.end() ; ++j )
         trks.push_back ( *j );
