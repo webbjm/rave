@@ -2,6 +2,7 @@
 #include "RaveBase/RaveEngine/interface/RaveParameterSetBuilder.h"
 #include "RecoVertex/ConfigurableVertexReco/interface/ConfigurableVertexReconstructor.h"
 #include "FWCore/MessageLogger/interface/MessageLogger.h"
+#include <iostream>
 
 #ifdef HAS_GSF
 #include "TrackingTools/TransientTrack/interface/GsfTransientTrack.h"
