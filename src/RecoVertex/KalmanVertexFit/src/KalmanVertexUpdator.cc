@@ -6,7 +6,7 @@
 #include "FWCore/MessageLogger/interface/MessageLogger.h"
 
 #include <algorithm>
-
+#include <iostream>
 // Based on the R.Fruhwirth et al Computer Physics Communications 96 (1996) 189-208
 template <unsigned int N>
 CachingVertex<N> KalmanVertexUpdator<N>::update(const  CachingVertex<N> & oldVertex,
@@ -187,7 +187,7 @@ pair <bool, double>  KalmanVertexUpdator<N>::chi2Increment(const VertexState & o
 
 //   chi2 += vertexPositionChi2(oldVertex, newVertexPosition);
   chi2 += helper.vertexChi2(oldVertex, newVertexState);
-
+  cout<<"Does this happen chi2 incr."<<endl; 
   return pair <bool, double> (true, chi2);
 }
 
