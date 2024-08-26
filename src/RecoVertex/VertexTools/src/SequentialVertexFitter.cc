@@ -182,7 +182,7 @@ CachingVertex<N> SequentialVertexFitter<N>::vertex(
   const GlobalPoint& priorPos,
   const GlobalError& priorError) const
 { 
-  cout<<"Vertex 3: Prior pos and error"<<priorPos<<" "<<priorError<<endl;
+  cout<<"Vertex 3: Prior pos and error"<<endl;//priorPos<<" "<<priorError<<endl;
   VertexState state(priorPos, priorError);
   vector<RefCountedVertexTrack> vtContainer = linearizeTracks(tracks, state);
   return fit(vtContainer, state, true);
