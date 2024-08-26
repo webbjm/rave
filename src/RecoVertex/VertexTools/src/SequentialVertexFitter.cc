@@ -286,7 +286,10 @@ SequentialVertexFitter<N>::fit(const vector<RefCountedVertexTrack> & tracks,
     for (typename vector<RefCountedVertexTrack>::const_iterator i 
 	   = globalVTracks.begin(); i != globalVTracks.end(); i++) {
       fVertex = theUpdator->add(fVertex,*i);
-      if (!fVertex.isValid()) break;
+      if (!fVertex.isValid()){
+      cout<<"Fails validity condition"<<endl;
+      break;
+     }
     }
 
     validVertex = fVertex.isValid();
