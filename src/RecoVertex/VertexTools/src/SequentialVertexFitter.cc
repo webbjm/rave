@@ -300,14 +300,14 @@ SequentialVertexFitter<N>::fit(const vector<RefCountedVertexTrack> & tracks,
     cout<<"after validVertex call"<< validVertex << endl;
     // check tracker bounds and NaN in position
     if (validVertex && hasNan(fVertex.position())) {
-      edm::LogDebug("RecoVertex/SequentialVertexFitter") 
-	 << "Fitted position is NaN.\n";
+    //  edm::LogDebug("RecoVertex/SequentialVertexFitter") 
+	cout << "Fitted position is NaN.\n"<<endl;
       validVertex = false;
     }
 
     if (validVertex && !insideTrackerBounds(fVertex.position())) {
-      edm::LogDebug("RecoVertex/SequentialVertexFitter") 
-	 << "Fitted position is out of tracker bounds.\n";
+//      edm::LogDebug("RecoVertex/SequentialVertexFitter") 
+	cout << "Fitted position is out of tracker bounds.\n"<<endl;
       validVertex = false;
     }
 
@@ -332,14 +332,14 @@ SequentialVertexFitter<N>::fit(const vector<RefCountedVertexTrack> & tracks,
 		(!validVertex) ) );
 
   if (!validVertex) {
-    edm::LogDebug("RecoVertex/SequentialVertexFitter") 
-       << "Fitted position is invalid (out of tracker bounds or has NaN). Returned vertex is invalid\n";
+//    edm::LogDebug("RecoVertex/SequentialVertexFitter") 
+      cout << "Fitted position is invalid (out of tracker bounds or has NaN). Returned vertex is invalid\n"<<endl;
     return CachingVertex<N>(); // return invalid vertex
   }
 
   if (step >= theMaxStep) {
-    edm::LogDebug("RecoVertex/SequentialVertexFitter") 
-       << "The maximum number of steps has been exceeded. Returned vertex is invalid\n";
+    //edm::LogDebug("RecoVertex/SequentialVertexFitter") 
+     cout << "The maximum number of steps has been exceeded. Returned vertex is invalid\n"<<endl;
     return CachingVertex<N>(); // return invalid vertex
   }
   cout<<"There should be an err message above"<<endl;
