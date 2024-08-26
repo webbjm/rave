@@ -90,6 +90,7 @@ SequentialVertexFitter<N>::vertex(const vector<reco::TransientTrack> & tracks) c
   // cout << "[SequentialVertexFitter] called now w/o linpt" << endl;
   if (!insideTrackerBounds(linP)) linP = GlobalPoint(0,0,0);
 
+  cout<<"Vertex 1: Inside trackerBounds? "<<insideTrackerBounds(linP)<<endl;
   // Initial vertex state, with a very large error matrix
   AlgebraicSymMatrix we(3,1);
   GlobalError error(we*10000);
@@ -129,6 +130,7 @@ SequentialVertexFitter<N>::vertex(const vector<reco::TransientTrack> & tracks,
 			       const GlobalPoint& linPoint) const
 { 
   // Initial vertex state, with a very large error matrix
+  cout<<"Vertex point 2"<<endl;
   AlgebraicSymMatrix we(3,1);
   GlobalError error(we*10000);
   VertexState state(linPoint, error);
@@ -180,6 +182,7 @@ CachingVertex<N> SequentialVertexFitter<N>::vertex(
   const GlobalPoint& priorPos,
   const GlobalError& priorError) const
 { 
+  cout<<"Vertex 3: Prior pos and error"<<priorPos<<" "<<priorError<<endl;
   VertexState state(priorPos, priorError);
   vector<RefCountedVertexTrack> vtContainer = linearizeTracks(tracks, state);
   return fit(vtContainer, state, true);
