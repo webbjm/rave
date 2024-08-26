@@ -258,7 +258,7 @@ CachingVertex<N>
 SequentialVertexFitter<N>::fit(const vector<RefCountedVertexTrack> & tracks,
   			    const VertexState priorVertex, bool withPrior ) const
 {
-  // cout << "[SequentialVertexFitter] priorVertex in fit =" << priorVertex.position() << endl;
+  cout << "[SequentialVertexFitter] priorVertex in fit =" << priorVertex.position() << endl;
   vector<RefCountedVertexTrack> initialTracks;
   GlobalPoint priorVertexPosition = priorVertex.position();
   GlobalError priorVertexError = priorVertex.error();

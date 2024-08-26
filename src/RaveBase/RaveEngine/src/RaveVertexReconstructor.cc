@@ -17,7 +17,7 @@ vector < TransientVertex > rave::VertexReconstructor::vertices
   {
     return vector < TransientVertex > ();
   }
-   cout<< "rave::VertexReconstructor" << endl;
+//   cout<< "rave::VertexReconstructor" << endl;
    edm::LogError("rave::VertexReconstructor" ) << "t.size=" << t.size();
    edm::LogError("rave::VertexReconstructor" ) << "t[0]=" << t[0].initialFreeState();
   #ifdef HAS_GSF
@@ -37,7 +37,7 @@ vector < TransientVertex > rave::VertexReconstructor::vertices
 
   }
   #endif 
-  // cout << "[RaveVertexReconstructor] w/o seed" << endl;
+  cout << "[RaveVertexReconstructor] w/o seed" << endl;
   return theRector->vertices ( t );
 }
 
@@ -124,6 +124,7 @@ rave::VertexReconstructor::VertexReconstructor ( const std::string & d ) :
   theRector ( 0 ), theMethod ( d )
 {
   edm::ParameterSet set = rave::ParameterSetBuilder::create ( d );
+  cout<<"rector ="<<d<<endl;
   theRector = new ConfigurableVertexReconstructor ( set );
   if (!theRector ) 
   {
