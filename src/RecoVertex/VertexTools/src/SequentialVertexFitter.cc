@@ -325,6 +325,7 @@ SequentialVertexFitter<N>::fit(const vector<RefCountedVertexTrack> & tracks,
     returnVertex = fVertex;
     globalVTracks.clear();
     step++;
+    cout<<"step posn: "<< fVertex.position()<<endl;
     cout<<validVertex<<" "<<step<<" "<<newPosition<<endl;
     cout<<theMaxStep<<" "<< theMaxShift << endl;
   } while ( (step != theMaxStep) &&
