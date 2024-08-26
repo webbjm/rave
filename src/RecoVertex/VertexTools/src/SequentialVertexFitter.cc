@@ -308,7 +308,7 @@ SequentialVertexFitter<N>::fit(const vector<RefCountedVertexTrack> & tracks,
     if (validVertex && !insideTrackerBounds(fVertex.position())) {
 //      edm::LogDebug("RecoVertex/SequentialVertexFitter") 
 	cout << "Fitted position is out of tracker bounds.\n"<<endl;
-      validVertex = false;
+      //validVertex = false;
     }
 
     if (!validVertex) {
