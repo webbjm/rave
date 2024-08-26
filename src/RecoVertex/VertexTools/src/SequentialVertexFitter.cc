@@ -281,7 +281,7 @@ SequentialVertexFitter<N>::fit(const vector<RefCountedVertexTrack> & tracks,
   GlobalPoint previousPosition;
   do {
     CachingVertex<N> fVertex = initialVertex;
-    cout<<"ith vertex info: "<<fVertex.isValid()<<" "<<fVertex.chi2()<<" "<<fVertex.z()<<endl;
+//    cout<<"ith vertex info: "<<fVertex.isValid()<<" "<<fVertex.chi2()<<" "<<fVertex.z()<<endl;
     // make new linearized and vertex tracks for the next iteration
     if(step != 0) globalVTracks = reLinearizeTracks(tracks, 
     					returnVertex.vertexState());
@@ -300,13 +300,13 @@ SequentialVertexFitter<N>::fit(const vector<RefCountedVertexTrack> & tracks,
     cout<<"after validVertex call"<< validVertex << endl;
     // check tracker bounds and NaN in position
     if (validVertex && hasNan(fVertex.position())) {
-      LogDebug("RecoVertex/SequentialVertexFitter") 
+      LogError("RecoVertex/SequentialVertexFitter") 
 	 << "Fitted position is NaN.\n";
       validVertex = false;
     }
 
     if (validVertex && !insideTrackerBounds(fVertex.position())) {
-      LogDebug("RecoVertex/SequentialVertexFitter") 
+      LogError("RecoVertex/SequentialVertexFitter") 
 	 << "Fitted position is out of tracker bounds.\n";
       validVertex = false;
     }
@@ -332,17 +332,17 @@ SequentialVertexFitter<N>::fit(const vector<RefCountedVertexTrack> & tracks,
 		(!validVertex) ) );
 
   if (!validVertex) {
-    LogDebug("RecoVertex/SequentialVertexFitter") 
+    LogError("RecoVertex/SequentialVertexFitter") 
        << "Fitted position is invalid (out of tracker bounds or has NaN). Returned vertex is invalid\n";
     return CachingVertex<N>(); // return invalid vertex
   }
 
   if (step >= theMaxStep) {
-    LogDebug("RecoVertex/SequentialVertexFitter") 
+    LogError("RecoVertex/SequentialVertexFitter") 
        << "The maximum number of steps has been exceeded. Returned vertex is invalid\n";
     return CachingVertex<N>(); // return invalid vertex
   }
-
+  cout<<"There should be an err message above"<<endl;
   // smoothing
   returnVertex = theSmoother->smooth(returnVertex);
 
