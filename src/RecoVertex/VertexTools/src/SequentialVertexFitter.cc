@@ -281,6 +281,7 @@ SequentialVertexFitter<N>::fit(const vector<RefCountedVertexTrack> & tracks,
   GlobalPoint previousPosition;
   do {
     CachingVertex<N> fVertex = initialVertex;
+    cout<<"ith vertex info: "<<fVertex.isValid()<<" "<<fVertex.chi2()<<" "<<fVertex.z()<<endl;
     // make new linearized and vertex tracks for the next iteration
     if(step != 0) globalVTracks = reLinearizeTracks(tracks, 
     					returnVertex.vertexState());
