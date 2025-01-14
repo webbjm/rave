@@ -55,8 +55,8 @@ ELSE( Rave_INCLUDE_DIRS AND Rave_LIB )
 ENDIF( Rave_INCLUDE_DIRS AND Rave_LIB )
 
 # Find compilation options
-SET( Rave_CFLAGS "-I@prefix@@includedir@ -I@prefix@@includedir@/rave/impl -I@prefix@@includedir@/rave/impl/ROOT/ -I@prefix@@includedir@/rave/impl/ROOT/genvector/ -I@prefix@/@includedir@/rave/impl/ROOT/smatrix/ -I@prefix@@includedir@/rave/impl/ROOT/mathcore/ -I@prefix@@includedir@/rave/swig -DRAVE @PLATFORMCPPFLAGS@ @FLAVORTAGGING_CPPFLAGS@ @KINEMATICS_CPPFLAGS@")
-SET( Rave_LIBDIR "@prefix@@libdir@")
-SET( Rave_LDFLAGS "-L${Rave_LIBDIR} -lRaveBase -lRaveCore -lRaveVertex @FLAVORTAGGING_LIBS@ @KINEMATICS_LIBS@")
-MESSAGE( STATUS "Check for Rave_CFLAGS: ${Rave_CFLAGS} -- works" )
-MESSAGE( STATUS "Check for Rave_LDFLAGS: ${Rave_LDFLAGS} -- works" )
+#SET( Rave_CFLAGS "-I@prefix@@includedir@ -I@prefix@@includedir@/rave/impl -I@prefix@@includedir@/rave/impl/ROOT/ -I@prefix@@includedir@/rave/impl/ROOT/genvector/ -I@prefix@/@includedir@/rave/impl/ROOT/smatrix/ -I@prefix@@includedir@/rave/impl/ROOT/mathcore/ -I@prefix@@includedir@/rave/swig -DRAVE @PLATFORMCPPFLAGS@ @FLAVORTAGGING_CPPFLAGS@ @KINEMATICS_CPPFLAGS@")
+#SET( Rave_LIBDIR "@prefix@@libdir@")
+#SET( Rave_LDFLAGS "-L${Rave_LIBDIR} -lRaveBase -lRaveCore -lRaveVertex @FLAVORTAGGING_LIBS@ @KINEMATICS_LIBS@")
+#MESSAGE( STATUS "Check for Rave_CFLAGS: ${Rave_CFLAGS} -- works" )
+#MESSAGE( STATUS "Check for Rave_LDFLAGS: ${Rave_LDFLAGS} -- works" )
